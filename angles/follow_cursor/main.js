@@ -49,6 +49,8 @@ window.onload = function() {
   height = canvas.height = window.innerHeight;
   centerY = height * .5;
   centerX = width * .5;
+  mouseX = centerX;
+  mouseY = centerY;
 
   var circles = [];;
   var NUM_OBJECTS = 100;
