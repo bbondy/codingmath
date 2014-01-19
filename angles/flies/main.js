@@ -12,8 +12,8 @@ function Circle(startingAngle)
 
 Circle.prototype = {
   render: function() {
-    var y = centerY + Math.sin(this.angleY) * this.radiusX;
-    var x = centerX + Math.cos(this.angleX) * this.radiusY;
+    var x = centerX + Math.cos(this.angleX) * this.radiusX;
+    var y = centerY + Math.sin(this.angleY) * this.radiusY;
     var r = 2;
     context.beginPath();
     context.arc(x, y, r, 0, Math.PI * 2, false);
