@@ -49,11 +49,26 @@ var vector = {
     return vector.create(this._x + v2.getX(), this._y + v2.getY());
   },
 
+  addTo: function(v2) {
+    this._x += v2.getX();
+    this._y += v2.getY();
+  },
+
   multiply: function(c) {
     return vector.create(this._x * c, this._y * c);
   },
 
+  multiplyBy: function(c) {
+    this._x *= c;
+    this._y *= c;
+  },
+
   divide: function(c) {
     return vector.create(this._x / c, this._y / c);
+  },
+
+  divideBy: function(c) {
+    this._x /= c;
+    this._y /= c;
   }
 };
