@@ -3,7 +3,7 @@
 function Particle(x, y, speed, direction, gravity) {
   this.position = vector.create(x, y);
   this.velocity = vector.create(0, 0);
-  this.gravity = vector.create(0, gravity);
+  this.gravity = vector.create(0, gravity || 0);
   this.velocity.setLength(speed);
   this.velocity.setAngle(direction);
   this.color = 'rgb(' + (Math.random() * 255 | 0) + ', ' + (Math.random() * 255 | 0) + ', ' + (Math.random() * 255 | 0) + ')';
