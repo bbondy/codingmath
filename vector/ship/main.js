@@ -23,13 +23,11 @@ window.onload = function() {
         break;
       case 40: // down
         thrust.setY(0.1);
-        console.log('thrust 0.1 y');
         break;
       case 37: // left
         thrust.setX(-0.1);
         break;
       case 39: // right
-        console.log('thrust 0.1 x');
         thrust.setX(0.1);
         break;
       default:
@@ -59,7 +57,6 @@ window.onload = function() {
 
   function render() {
     context.clearRect(0, 0, width, height);
-    console.log('render: ' + thrust.getX());
     ship.accelerate(thrust);
     ship.update();
     if (ship.position.getX() > width) {
