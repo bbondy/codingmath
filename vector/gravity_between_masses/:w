@@ -1,0 +1,61 @@
+"use strict";
+
+var width, height, canvas, context;
+var NUM_UNITS = 1000;
+
+window.onload = function() {
+  var canvas = document.getElementById("canvas"),
+    context = canvas.getContext("2d"),
+    width = canvas.width = window.innerWidth,
+    height = canvas.height = window.innerHeight,
+    sun = particle.create(width / 2, height / 2, 0, 0),
+    planet = particle.create(width / 2, + 200 height / 2, 10, -Math.PI /2);
+  sun.mass = 20000;
+
+
+  document.body.addEventListener("keydown", function(event) {
+    console.log('keydown: ' + event.keyCode);
+    switch(event.keyCode) {
+      case 38: // up
+        thrust.setY(-0.1);
+        break;
+      case 40: // down
+        thrust.setY(0.1);
+        break;
+      case 37: // left
+        thrust.setX(-0.1);
+        break;
+      case 39: // right
+        thrust.setX(0.1);
+        break;
+      default:
+      break;
+    }
+  });
+
+  document.body.addEventListener("keyup", function(event) {
+    console.log('keyup');
+    switch(event.keyCode) {
+      case 38: // up
+        thrust.setY(0);
+        break;
+      case 40: // down
+        thrust.setY(0);
+        break;
+      case 37: // left
+        thrust.setX(0);
+        break;
+      case 39: // right
+        thrust.setX(0);
+        break;
+      default:
+      break;
+    }
+  });
+
+  function update() {
+    context.clearRect(0, 0, width, height);
+    requestAnimationFrame(render);
+  }
+  update();
+};
