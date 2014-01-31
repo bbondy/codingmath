@@ -53,8 +53,8 @@ window.onload = function() {
   function iterate(depth) {
     for (var i = 0; i < numShapes; i++) {
       chaos.context.save();
-      chaos.context.rotate(angles[i]);
-      chaos.context.translate(dist[i], 0);
+      chaos.context.rotate(angles[i] + Math.random() - .5);
+      chaos.context.translate(dist[i] * (Math.random() * .5 + 1), 0);
       chaos.context.scale(scaleFactor, scaleFactor);
       drawShape(depth);
       if (depth > 0) {
