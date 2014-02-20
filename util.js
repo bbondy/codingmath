@@ -9,3 +9,7 @@ function lerp(norm, min, max) {
 function map(val, sourceMin, sourceMax, destMin, destMax) {
   return lerp(normalize(val, sourceMin, sourceMax), destMin, destMax);
 }
+
+function clamp(val, min, max) {
+  return Math.min(Math.max(val, min), max);
+}
