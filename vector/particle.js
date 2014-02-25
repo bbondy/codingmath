@@ -9,12 +9,14 @@ function Particle(x, y, speed, direction, gravity) {
   this.color = 'rgb(' + (Math.random() * 255 | 0) + ', ' + (Math.random() * 255 | 0) + ', ' + (Math.random() * 255 | 0) + ')';
   this.radius = 10;
   this.mass = 1;
+  this.friction = 1;
 };
 
 Particle.prototype = {
   update: function() {
     this.accelerate(this.gravity);
     this.position = this.position.add(this.velocity);
+    this.velocity.multiplyBy(this.friction);
   },
 
   accelerate: function(acceleration) {

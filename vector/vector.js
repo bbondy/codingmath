@@ -49,9 +49,18 @@ var vector = {
     return vector.create(this._x + v2.getX(), this._y + v2.getY());
   },
 
+  subtract: function(v2) {
+    return vector.create(this._x - v2.getX(), this._y - v2.getY());
+  },
+
   addTo: function(v2) {
     this._x += v2.getX();
     this._y += v2.getY();
+  },
+
+  subtractFrom: function(v2) {
+    this._x -= v2.getX();
+    this._y -= v2.getY();
   },
 
   multiply: function(c) {
